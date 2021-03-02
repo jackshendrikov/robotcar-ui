@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Template</title>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.984.0" data-gr-ext-installed="">
+<main>
+  <section class="controls">
+    <div id="box-sizing" class="control-set">
+      <fieldset>
+        <legend id="bs">Indicators</legend>
+        <label>
+          <input type="checkbox" value="content-box" class="radio1">ITEM
+        </label>
+        <label>
+          <input type="checkbox" value="border-box" class="radio2">NIGHT
+        </label>
+      </fieldset>
+    </div>
+
+    <div id="border" class="control-set">
+      <fieldset>
+        <legend>TOTAL DIMENSIONS</legend>
+        <div class="generated-width"><span class="generated-direction">horizontal:</span> <span class="changes value-{{generatedBoxDimensions.width}}">{{generatedBoxDimensions.width}}px</span></div>
+        <div class="generated-height"><span class="generated-direction">vertical:</span> <span class="changes value-{{generatedBoxDimensions.height}}">{{generatedBoxDimensions.height}}px</span></div>
+      </fieldset>
+    </div>
+
+    <div id="padding" class="control-set">
+      <fieldset>
+        <legend>DISTANCE / SPEED</legend>
+
+        <div class="cell">
+          <div id="slider-handler">
+            <span id="handle1"></span>
+          </div>
+        </div>
+
+        <div class="cell">
+          <div id="slider-handler2">
+            <span id="handle2"></span>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+    <div id="margin" class="control-set">
+      <fieldset>
+        <legend>Border</legend>
+        <div class="sliders">
+          <label>border-top</label>
+          <slider floor="0" ceiling="40" step="5" precision="1" ng-model="border.top" highlight="left"></slider>
+          <div class="value">{{border.top}}px</div>
+          <label>border-right</label>
+          <slider floor="0" ceiling="40" step="5" precision="1" ng-model="border.right" highlight="left"></slider>
+          <div class="value">{{border.right}}px</div>
+          <label>border-bottom</label>
+          <slider floor="0" ceiling="40" step="5" precision="1" ng-model="border.bottom" highlight="left"></slider>
+          <div class="value">{{border.bottom}}px</div>
+          <label>border-left</label>
+          <slider floor="0" ceiling="40" step="5" precision="1" ng-model="border.left" highlight="left"></slider>
+          <div class="value">{{border.left}}px</div>
+        </div>
+      </fieldset>
+    </div>
+
+  </section>
+
+  <section class="box-model">
+    <div id="content" class="control-set">
+      <fieldset>
+        <legend>MAP DIMENSIONS</legend>
+        <div class="sliders">
+          <label>width</label>
+          <slider floor="0" ceiling="840" step="10" precision="1" ng-model="dimensions.width" highlight="left"></slider>
+          <div class="value">{{dimensions.width}}px</div>
+          <label>height</label>
+          <slider floor="0" ceiling="500" step="10" precision="1" ng-model="dimensions.height" highlight="left"></slider>
+          <div class="value">{{dimensions.height}}px</div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div id="generated-size" class="control-set">
+      <fieldset>
+        <legend>AUTOMODE</legend>
+        <input id="toggle-include-margin" type="checkbox" checked="" ng-model="generatedIncludeMargin" ng-change="checkIncludeMargin()" class="toggle">
+        <label for="toggle-include-margin" class="toggle-control"></label><span id="automode" class="toggle-text">OFF</span>
+        </fieldset>
+    </div>
+
+    <div id="diagram">
+      <div ng-style="{&#39;top&#39;: boxPosition.top+&#39;px&#39;, &#39;left&#39;: boxPosition.left+&#39;px&#39;, &#39;width&#39;: dimensions.width+&#39;px&#39;, &#39;height&#39;: dimensions.height+&#39;px&#39;}" class="box">
+        <div ng-style="{&#39;width&#39;: styleBorder.width+&#39;px&#39;, &#39;height&#39;: styleBorder.height+&#39;px&#39;, &#39;top&#39;: styleBorder.top+&#39;px&#39;, &#39;left&#39;: styleBorder.left+&#39;px&#39;}" class="box-border box-property"><span id="property-label-border" class="property-label"></span><span id="border-v" data-id="border-v" data-top="{{border.top}}" data-bottom="{{border.bottom}}" label-position-top="{{border.top}}" label-position-bottom="{{border.bottom}}" label-position-v="" class="box-property-vertical"></span><span id="border-h" data-id="border-h" data-left="{{border.left}}" data-right="{{border.right}}" label-position-right="{{border.right}}" label-position-left="{{border.left}}" label-position-h="" class="box-property-horizontal"></span></div>
+        <div ng-style="{&#39;width&#39;: innerContent.width+&#39;px&#39;, &#39;height&#39;: innerContent.height+&#39;px&#39;}" data-height="{{innerContent.height}}" data-width="{{innerContent.width}}" class="box-inner box-property"><span id="property-label-content" class="property-label"></span></div>
+        <div ng-style="{&#39;width&#39;: innerContent.width+&#39;px&#39;, &#39;height&#39;: innerContent.height+&#39;px&#39;}" data-height="{{innerContent.height}}" data-width="{{innerContent.width}}" class="box-inner box-property"><img src="https://i.imgur.com/nfDKwmv.jpg" width="{{innerContent.width}}" height="{{innerContent.height}}" alt="lorem"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
